@@ -1,0 +1,66 @@
+/*
+LAB08 - Desenvolva um programa que apresente um menu na tela com as seguintes opções:
+1-Soma
+2-Subtrai
+3-Sair
+Se a opção escolhida for 1, deverá somar dois números que serão solicitadas na tela.
+Se a opção escolhida for 2, deverá subtrair dois números que serão solicitadas na tela.
+Se a opção for 3 deverá finalizar a execução do programa.
+Somente deverá solicitar para informar os números se a opção for 1 ou 2.
+*/
+#include <stdio.h>
+#include <conio.h>
+#include <locale.h>
+#include <stdlib.h>
+
+int main ()
+{
+    int opcao, n1, n2, result;
+    
+    setlocale(LC_ALL, "Portuguese");
+    
+    do{
+	printf("\tCALCULADORA DE SOMA E SUBTRAÇÃO\n");
+    printf("\n\n\t\t1-Somar");
+    printf ("\n\n\t\t2-Subtrair");
+    printf ("\n\n\t\t3-Sair");
+    printf ("\n\n\t\tOpção:");
+
+       scanf(" %d", &opcao);     
+	   fflush(stdin);
+
+    switch (opcao)
+{
+	case 1:
+		printf("Calculadora de Soma \n"); 
+		printf("Primeiro numero: \n"); 
+      	 	scanf(" %d",&n1);
+  	    printf("Segundo numero: \n"); 
+       		scanf(" %d",&n2);
+    result = n1 + n2;
+    	printf("Resultado: %d\n",result);
+	break;
+	   
+	   
+	case 2: 
+		printf("Calculadora de Subtração\n"); 
+		printf("Primeiro numero: \n"); 
+       		scanf(" %d",&n1);
+    	printf("Segundo numero: \n"); 
+       		scanf(" %d",&n2);
+    	result = n1 - n2;
+    	printf("Resultado: %d\n",result);
+	break;
+	   
+	case 3: 
+		printf("Opção selecionada: Sair\n"); 
+	break;
+       
+    default : printf("Digite uma opção válida!\n");  
+}	
+	getch();
+	system("cls");
+} 	while (opcao != 3);
+
+    return 0;
+}
